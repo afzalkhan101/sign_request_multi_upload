@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_sign_request_form_inherit_multi_doc" model="ir.ui.view">
+        <field name="name">sign.request.form.inherit.multi.doc</field>
+        <field name="model">sign.request</field>
+        <field name="inherit_id" ref="sign.sign_request_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group string="Additional Documents">
+                    <field name="attachment_ids"
+                           widget="many2many_binary_multi_files"
+                           options="{'no_create': True, 'no_create_edit': True, 'reload_on_button': True}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
